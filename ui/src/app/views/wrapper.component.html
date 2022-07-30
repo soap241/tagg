@@ -1,0 +1,343 @@
+<app-header
+  [navbarBrandRouterLink]="['/dashboard']"
+  [fixed]="true"
+  [navbarBrandFull]="{
+    src: 'assets/img/brand/logo.png',
+    height: 50,
+    alt: 'logo',
+    style: 'margin-left: -20px;'
+  }"
+  [navbarBrandMinimized]="{
+    src: 'assets/img/brand/logo.png',
+    height: 50,
+    alt: 'logo',
+    style: 'margin-left: 85px;'
+  }"
+  [sidebarToggler]="''"
+  [asideMenuToggler]="''"
+>
+  <div
+    style="
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      z-index: -10;
+      font-size: 2rem;
+      font-weight: bold;
+    "
+  >
+    <span *ngIf="!navigation_active">{{ routed_location | uppercase }}</span>
+    <i *ngIf="navigation_active" class="fa fa-spin fa-circle-o-notch"></i>
+  </div>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item d-md-down-none h4">
+      {{ app_user.fullname }}
+    </li>
+    <li class="nav-item d-md-down-none h4">
+      <button
+        class="btn btn-ghost-info ml-3"
+        (click)="call_change_password_modal()"
+      >
+        <i class="fa fa-lock"></i>
+      </button>
+      <button
+        class="btn btn-ghost-secondary mr-3"
+        (click)="call_logout_modal()"
+      >
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </li>
+  </ul>
+</app-header>
+<div class="app-body">
+  <app-sidebar
+    #appSidebar
+    [fixed]="true"
+    [display]="'lg'"
+    [minimized]="sidebarMinimized"
+    (minimizedChange)="toggleMinimize($event)"
+  >
+    <app-sidebar-nav
+      [navItems]="nav_items"
+      [perfectScrollbar]
+      [disabled]="appSidebar.minimized"
+    ></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <div class="container h-100">
+      <router-outlet></router-outlet>
+    </div>
+    <div @fadeInOut *ngIf="navigation_active" class="x-nav-cover"></div>
+  </main>
+</div>
+<app-footer>
+  <span> &copy; 2022 <strong>Automation Ghana</strong></span>
+  <span class="ml-auto"
+    >Powered by <a href="https://coreui.io/angular">CoreUI for Angular</a></span
+  >
+</app-footer>
+
+<input
+  type="text"
+  hidden="true"
+  [(ngModel)]="reloginService.relogin_req"
+  (change)="call_relogin_modal()"
+/>
+
+<div
+  bsModal
+  #ChangePasswordModal="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  [config]="{ backdrop: 'static', keyboard: false }"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Change Password</h4>
+        <button
+          type="button"
+          class="close"
+          (click)="ChangePasswordModal.hide()"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form
+        #tvar_change_password_form="ngForm"
+        (submit)="user_password_modify()"
+      >
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="cui-lock-locked"></i
+              ></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="user_password_set.old"
+              name="user_password_old"
+              placeholder="old password"
+              #tvar_user_password_old="ngModel"
+              minlength="5"
+              required
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="cui-lock-locked"></i
+              ></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="user_password_set.new"
+              name="user_password_new"
+              placeholder="new password"
+              #tvar_user_password_new="ngModel"
+              minlength="8"
+              required
+            />
+          </div>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="cui-lock-locked"></i
+              ></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="user_password_set.confirm"
+              name="user_password_confirm"
+              placeholder="confirm new password"
+              #tvar_user_password_confirm="ngModel"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div
+            class="col-8 pl-0 m-0 text-{{
+              form_submit_success ? 'success' : 'danger'
+            }}"
+          >
+            <i
+              *ngIf="form_submit_msg"
+              class="cui-circle-{{ form_submit_success ? 'check' : 'x' }}"
+              style="font-size: 1rem; position: relative; top: 2px"
+            ></i>
+            {{ form_submit_msg }}
+          </div>
+          <div class="col-4 pr-0 m-0 text-right">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="ChangePasswordModal.hide()"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="
+                !tvar_change_password_form.form.valid || form_submit_active
+              "
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+  bsModal
+  #ReloginWrapper="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  [config]="{ backdrop: 'static', keyboard: false }"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button
+          type="button"
+          class="close"
+          (click)="ReloginWrapper.hide()"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #tvar_relogin_form="ngForm" (submit)="relogin_submit()">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="cui-lock-locked"></i
+              ></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="relogin_password"
+              name="relogin_password"
+              placeholder="password"
+              #tvar_relogin_password="ngModel"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div
+            class="col-8 pl-0 m-0 text-{{
+              relogin_submit_success ? 'success' : 'danger'
+            }}"
+          >
+            <i
+              *ngIf="relogin_submit_msg"
+              class="cui-circle-{{ relogin_submit_success ? 'check' : 'x' }}"
+              style="font-size: 1rem; position: relative; top: 2px"
+            ></i>
+            {{ relogin_submit_msg }}
+          </div>
+          <div class="col-4 pr-0 m-0 text-right">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="ReloginWrapper.hide()"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="
+                !tvar_relogin_form.form.valid || relogin_submit_active
+              "
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+  bsModal
+  #LogoutModal="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm modal-secondary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Logout</h4>
+        <button
+          type="button"
+          class="close"
+          (click)="LogoutModal.hide()"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">Are you sure you want to logout?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="user_logout()">
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="x-toaster">
+  <div
+    @toasterInOut
+    *ngFor="let t of toasterService.toast_plate"
+    class="x-toast x-toast-{{ toasterService.toaster[t].type }}"
+  >
+    <button
+      *ngIf="!toasterService.toaster[t].cannot_close"
+      type="button"
+      class="close"
+      (click)="toasterService.trigger_pop_toast(toasterService.toaster[t].key)"
+      style="margin-top: -10px; margin-right: -20px"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="x-toast-icon">
+      <i class="{{ toasterService.toaster[t].icon_str }}"></i>
+    </div>
+    <div class="x-toast-title">{{ toasterService.toaster[t].title }}</div>
+    <div class="x-toast-message">
+      <div>{{ toasterService.toaster[t].msg }}</div>
+    </div>
+  </div>
+</div>

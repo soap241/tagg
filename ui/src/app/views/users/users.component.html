@@ -1,0 +1,252 @@
+<div class="animated fadeIn" style="margin-top: 1.5rem;">
+  <div class="row" style="flex-direction: column;">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <div style="display: flex;">
+            <div class="x-list-title">
+              <i class="fa fa-users x-list-title-icon"></i> User Accounts
+            </div>
+            <div style="flex: 1 1 0;"></div>
+            <div>
+              <button class="btn btn-sm btn-ghost-dark" (click)="call_new_user_modal()">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" [collapse]="!can_view_users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>Date Registered</th>
+                <th>Status</th>
+                <th style="width: 140px;">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of users; index as i;" class="x-table-row">
+                <td>{{ u.fullname }}</td>
+                <td>{{ u.username }}</td>
+                <td>{{ u.created_at | date:'dd/MM/y' }}</td>
+                <td style="font-size: 1rem;">
+                  <span class="badge badge-{{u.can_login? 'success' : 'danger'}}">{{u.can_login? 'Active' :
+                    'Inactive'}}</span>
+                </td>
+                <td class="x-controls-td">
+                  <button class="btn btn-sm btn-ghost-warning" type="button" (click)="call_edit_user_modal(i)">
+                    <i class="cui-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-ghost-danger" type="button" (click)="call_delete_user_modal(i)">
+                    <i class="cui-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <div style="display: flex;">
+            <div class="x-list-title">
+              <i class="fa fa-unlock-alt x-list-title-icon"></i> Permissions for :
+            </div>
+            <div style="flex: 2 1 0; margin-left: 10px;">
+              <select [(ngModel)]="perms_focus_user_id" name="perms_focus_user_id" class="form-control"
+                (change)="reload_permissions()">
+                <option *ngFor="let u of users" value="{{ u.id }}">{{ u.fullname }}</option>
+              </select>
+            </div>
+            <div class="x-list-title ml-3" style="line-height: 35px;">
+              Module :
+            </div>
+            <div style="flex: 2 1 0; margin-left: 10px;">
+              <select [(ngModel)]="perms_focus_module_id" name="perms_focus_module_id" class="form-control"
+                (change)="reload_permissions()">
+                <option value="0">All Modules</option>
+                <option *ngFor="let m of modules" value="{{ m.id }}">{{ m.name | titlecase }}</option>
+              </select>
+            </div>
+            <div style="flex: 1 1 0;"></div>
+          </div>
+        </div>
+        <div class="card-body" [collapse]="!can_view_permissions">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Module</th>
+                <th>Permission</th>
+                <th>Description</th>
+                <th style="width: 60px;">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of permissions" class="x-table-row">
+                <td>{{ p.module.name | titlecase }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.description }}</td>
+                <td class="x-controls-td">
+                  <div class="form-check">
+                    <label class="switch switch-3d switch-sm switch-success mb-0">
+                      <input type="checkbox" class="switch-input" [checked]="p.has_perm"
+                        (change)="p.has_perm=!p.has_perm; check_permissions();">
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-group form-actions text-right">
+            <button type="button" class="btn btn-warning" [disabled]="!can_save_permissions"
+              (click)="reset_permissions()">Reset</button>
+            <button type="button" class="btn btn-primary" [disabled]="!can_save_permissions"
+              (click)="change_permissions()">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #CreateUserModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  [config]="{backdrop: 'static', keyboard: false}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">New User</h4>
+        <button type="button" class="close" (click)="CreateUserModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #tvar_create_user_form="ngForm" (submit)="create_user();">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_user.fullname"
+              name="focus_user_fullname" placeholder="full name" #tvar_focus_user_fullname="ngModel" minlength="5"
+              (change)="generate_username()" required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_user.username"
+              name="focus_user_username" placeholder="username" #tvar_focus_user_username="ngModel"
+              (change)="focus_username_changed=true;" minlength="5" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="CreateUserModal.hide()">Cancel</button>
+          <button type="submit" class="btn btn-primary"
+            [disabled]="!tvar_create_user_form.form.valid || form_submit_active">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div bsModal #ModifyUserModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  [config]="{backdrop: 'static', keyboard: false}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit User</h4>
+        <button type="button" class="close" (click)="ModifyUserModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #tvar_edit_user_form="ngForm" (submit)="edit_user();">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_user.fullname"
+              name="focus_user_fullname" placeholder="full name" #tvar_focus_user_fullname="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_user.username"
+              name="focus_user_username" placeholder="username" #tvar_focus_user_username="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-5 col-form-label">User is Active: </label>
+            <div class="col-md-7 col-form-label">
+              <div class="form-check">
+                <label class="switch switch-3d switch-sm switch-success mb-0">
+                  <input type="checkbox" class="switch-input" [checked]="focus_user.can_login"
+                    (change)="focus_user.can_login=!focus_user.can_login;">
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button *ngIf="focus_user.id != this_user_id" type="button" class="btn btn-warning"
+            (click)="call_reset_password_modal()">Reset Password</button>
+          <button type="button" class="btn btn-secondary" (click)="ModifyUserModal.hide()">Cancel</button>
+          <button type="submit" class="btn btn-primary"
+            [disabled]="!tvar_edit_user_form.form.valid || form_submit_active">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div bsModal #ResetPasswordModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Reset Password</h4>
+        <button type="button" class="close" (click)="ResetPasswordModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Reset password for {{ focus_user.fullname }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="ResetPasswordModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-warning" [disabled]="form_submit_active"
+          (click)="reset_user_password()">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #DeleteUserModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete User</h4>
+        <button type="button" class="close" (click)="DeleteUserModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Delete user {{ focus_user.fullname }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="DeleteUserModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-danger" [disabled]="form_submit_active"
+          (click)="delete_user()">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
