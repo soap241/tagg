@@ -1,0 +1,15 @@
+# Specify filepatterns you want git to ignore.
+
+api/.env
+api/node_modules/*
+api/*.exe
+
+ui/environments/*
+ui/node_modules/*
+ui/dist
+ui/.sass-cache
+ui/npm-debug.log
+ui/typings
+ui/e2e/*
+ui/.DS_Store
+ui/Thumbs.db
