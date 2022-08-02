@@ -3,6 +3,7 @@
 api/.env
 api/node_modules/*
 api/*.exe
+api/dist
 
 ui/environments/*
 ui/node_modules/*

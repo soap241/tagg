@@ -1,4 +1,5 @@
-import { MessagesComponent } from "./messages/messages.component";
+import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
+
 import { ProjectsComponent } from "./projects/projects.component";
 import { HomeComponent } from "./home/home.component";
 import { NgModule } from "@angular/core";
@@ -39,10 +40,10 @@ const routes: Routes = [
         },
       },
       {
-        path: "messages",
-        component: MessagesComponent,
+        path: "job-satisfaction",
+        component: JobSatisfactionComponent,
         data: {
-          title: "Messages",
+          title: "Job Satisfaction",
         },
       },
       {

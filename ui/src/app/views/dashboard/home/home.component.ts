@@ -26,10 +26,10 @@ export class HomeComponent implements OnInit {
       buttonText: "View Projects",
     },
     {
-      title: "Your Messages",
-      link: "/dashboard/messages",
-      imageUrl: "../../../assets/img/chat.png",
-      buttonText: "View Messages",
+      title: "Job Satisfaction",
+      link: "/dashboard/job-satisfaction",
+      imageUrl: "../../../assets/img/job.png",
+      buttonText: "Fill Form",
     },
   ];
   constructor() {}

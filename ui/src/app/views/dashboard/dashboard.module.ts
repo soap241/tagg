@@ -10,10 +10,10 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { DashboardComponent } from "./dashboard.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { HomeComponent } from "./home/home.component";
-import { OrdersComponent } from './orders/orders.component';
-import { PaymentsComponent } from './payments/payments.component';
-import { MessagesComponent } from './messages/messages.component';
-import { ProjectCardComponent } from './project-card/project-card.component';
+import { OrdersComponent } from "./orders/orders.component";
+import { PaymentsComponent } from "./payments/payments.component";
+import { ProjectCardComponent } from "./project-card/project-card.component";
+import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
 
 @NgModule({
   imports: [
@@ -24,6 +24,15 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
   ],
-  declarations: [DashboardComponent, ProjectsComponent, HomeComponent, OrdersComponent, PaymentsComponent, MessagesComponent, ProjectCardComponent],
+  declarations: [
+    DashboardComponent,
+    ProjectsComponent,
+    HomeComponent,
+    JobSatisfactionComponent,
+    OrdersComponent,
+    PaymentsComponent,
+    ProjectCardComponent,
+    JobSatisfactionComponent,
+  ],
 })
 export class DashboardModule {}
