@@ -1,3 +1,5 @@
+import { DataService } from "./../../../services/data/data.service";
+import { IProject } from "./../../../models/@types";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -6,10 +8,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./projects.component.css"],
 })
 export class ProjectsComponent implements OnInit {
-  orderStatus = 50;
-  currentStatus = "shipped";
+  projects: IProject[] = [];
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.projects = this.dataService.getProjects();
+  }
 }

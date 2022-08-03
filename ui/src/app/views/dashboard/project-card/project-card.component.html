@@ -2,21 +2,21 @@
   <div class="row">
     <!---ORDER DETAILS-->
     <div class="col-4">
-      <p class="font-weight-bold h1">Order {{ orderNumber }}</p>
-      <p class="h6">Agent: Priscilla Owusu</p>
-      <p class="h6">Task: Buy Property</p>
+      <p class="font-weight-bold h1">Order {{ project.id }}</p>
+      <p class="h6">Agent: {{ project.agent }}</p>
+      <p class="h6">Task: {{ project.task }}</p>
     </div>
     <!--ORDER PROGRESS-->
 
     <div class="col-4">
       <p class="text-center font-weight-bold h3">Complete</p>
-      <p class="text-center font-weight-bold h3">{{ orderStatus + "%" }}</p>
+      <p class="text-center font-weight-bold h3">{{ project.status + "%" }}</p>
       <div class="progress">
         <div
           class="progress-bar bg-info"
           role="progressbar"
-          [ngStyle]="{ width: orderStatus + '%' }"
-          [attr.aria-valuenow]="orderStatus"
+          [ngStyle]="{ width: project.status + '%' }"
+          [attr.aria-valuenow]="project.status"
           [attr.aria-valuemin]="0"
           [attr.aria-valuemax]="100"
         ></div>
@@ -26,7 +26,7 @@
     <!---COMPLETION DATE-->
     <div class="col-4 d-flex flex-column align-items-end">
       <p class="font-weight-bold h5">Expected Completion</p>
-      <p class="h6">Oct 12, 2019</p>
+      <p class="h6">{{ project.actualCompletionDate | date }}</p>
       <p class="h6">15 days</p>
     </div>
   </div>
@@ -36,30 +36,33 @@
     <div class="steps">
       <div
         class="step"
-        [ngClass]="orderStatus === 0 ? 'current' : ''"
+        [ngClass]="project.status === 0 ? 'current' : ''"
         style="left: 32px"
       >
-        <span>To be prepared</span>
+        <span>Order received</span>
       </div>
-      <div class="step" [ngClass]="orderStatus === 25 ? 'current' : ''">
-        <span>Sent to logistics</span>
+      <div class="step" [ngClass]="project.status === 20 ? 'current' : ''">
+        <span>Processed</span>
       </div>
-      <div class="step" [ngClass]="orderStatus === 50 ? 'current' : ''">
-        <span>In preparation</span>
+      <div class="step" [ngClass]="project.status === 40 ? 'current' : ''">
+        <span>In progress</span>
       </div>
-      <div class="step" [ngClass]="orderStatus === 75 ? 'current' : ''">
-        <span>Shipped</span>
+      <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
+        <span>Final checks</span>
+      </div>
+      <div class="step" [ngClass]="project.status === 80 ? 'current' : ''">
+        <span>Supplied</span>
       </div>
       <div
         class="step"
-        [ngClass]="orderStatus === 100 ? 'current' : ''"
+        [ngClass]="project.status === 100 ? 'current' : ''"
         style="left: -56px"
       >
-        <span>Delivered</span>
+        <span>Closed</span>
       </div>
     </div>
 
-    <div class="line" [ngStyle]="{ width: orderStatus + '%' }"></div>
+    <div class="line" [ngStyle]="{ width: project.status + '%' }"></div>
   </div>
   <div class="d-flex justify-content-center">
     <button class="btn btn-primary my-2">View Details</button>

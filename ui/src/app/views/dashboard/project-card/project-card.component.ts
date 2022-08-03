@@ -1,3 +1,4 @@
+import { IProject } from "./../../../models/@types";
 import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
@@ -6,11 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./project-card.component.css"],
 })
 export class ProjectCardComponent implements OnInit {
-  // orderStatus = 75;
-  currentStatus = "shipped";
-
-  @Input() orderStatus = 0;
-  @Input() orderNumber = "";
+  @Input() project: IProject = {} as IProject;
   constructor() {}
 
   ngOnInit(): void {}
