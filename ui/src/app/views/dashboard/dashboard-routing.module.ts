@@ -1,3 +1,4 @@
+import { ViewDetailsComponent } from "./view-details/view-details.component";
 import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
 
 import { ProjectsComponent } from "./projects/projects.component";
@@ -30,6 +31,14 @@ const routes: Routes = [
         component: ProjectsComponent,
         data: {
           title: "Projects",
+        },
+        // children: [{ path: ":id", component: ViewDetailsComponent }],
+      },
+      {
+        path: "projects/:id",
+        component: ViewDetailsComponent,
+        data: {
+          title: "Project Details",
         },
       },
       {

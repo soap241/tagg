@@ -14,6 +14,7 @@ import { OrdersComponent } from "./orders/orders.component";
 import { PaymentsComponent } from "./payments/payments.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
+import { ViewDetailsComponent } from './view-details/view-details.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.co
     PaymentsComponent,
     ProjectCardComponent,
     JobSatisfactionComponent,
+    ViewDetailsComponent,
   ],
 })
 export class DashboardModule {}

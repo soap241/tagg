@@ -1,3 +1,4 @@
+import { ActivatedRoute } from "@angular/router";
 import { IProject } from "./../../../models/@types";
 import { Component, Input, OnInit } from "@angular/core";
 
@@ -8,7 +9,12 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project: IProject = {} as IProject;
-  constructor() {}
+  id: string;
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.id = params.id;
+    });
+  }
 }
