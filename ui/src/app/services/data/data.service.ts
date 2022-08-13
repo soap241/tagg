@@ -10,7 +10,7 @@ export class DataService {
   projects: IProject[] = [
     {
       id: "1",
-      status: 20,
+      status: 15,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -19,7 +19,7 @@ export class DataService {
     },
     {
       id: "2",
-      status: 40,
+      status: 25,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -28,7 +28,7 @@ export class DataService {
     },
     {
       id: "3",
-      status: 100,
+      status: 50,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -37,7 +37,7 @@ export class DataService {
     },
     {
       id: "4",
-      status: 80,
+      status: 39,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -46,7 +46,7 @@ export class DataService {
     },
     {
       id: "5",
-      status: 20,
+      status: 25,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -55,7 +55,7 @@ export class DataService {
     },
     {
       id: "6",
-      status: 60,
+      status: 63,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -64,7 +64,7 @@ export class DataService {
     },
     {
       id: "7",
-      status: 40,
+      status: 75,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -73,7 +73,7 @@ export class DataService {
     },
     {
       id: "8",
-      status: 40,
+      status: 87,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
@@ -82,7 +82,7 @@ export class DataService {
     },
     {
       id: "9",
-      status: 60,
+      status: 63,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
