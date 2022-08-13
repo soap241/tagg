@@ -8,3 +8,11 @@ export interface IProject {
   comments: any[];
   paymentStatus: number;
 }
+
+export interface IOrder {
+  id: string;
+  productName: string;
+  productPrice: number;
+  quantity: number;
+  totalAmount: number;
+}

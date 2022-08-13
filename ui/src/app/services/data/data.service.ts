@@ -1,4 +1,4 @@
-import { IProject } from "./../../models/@types";
+import { IOrder, IProject } from "./../../models/@types";
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -6,6 +6,30 @@ import { Injectable } from "@angular/core";
 })
 export class DataService {
   constructor() {}
+
+  orders: IOrder[] = [
+    {
+      id: "1",
+      productName: "Product 1",
+      productPrice: 100,
+      quantity: 1,
+      totalAmount: 100,
+    },
+    {
+      id: "2",
+      productName: "Product 2",
+      productPrice: 200,
+      quantity: 2,
+      totalAmount: 400,
+    },
+    {
+      id: "3",
+      productName: "Product 2",
+      productPrice: 300,
+      quantity: 2,
+      totalAmount: 600,
+    },
+  ];
 
   projects: IProject[] = [
     {
@@ -106,5 +130,13 @@ export class DataService {
 
   getProject(id: any) {
     return this.projects.find((project) => project.id === id);
+  }
+
+  getOrders() {
+    return this.orders;
+  }
+
+  getOrder(id: any) {
+    return this.orders.find((order) => order.id === id);
   }
 }
