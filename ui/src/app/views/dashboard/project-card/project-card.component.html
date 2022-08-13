@@ -50,9 +50,21 @@
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
         <span>Final checks</span>
       </div>
-      <div class="step" [ngClass]="project.status === 80 ? 'current' : ''">
-        <span>Supplied</span>
+      <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
+        <span>Acceptance Tests</span>
       </div>
+      <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
+        <span>Training And Handing over</span>
+      </div>
+      <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
+        <span>Client Acceptance</span>
+      </div>
+      <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
+        <span>Final Invoicing</span>
+      </div>
+      <!-- <div class="step" [ngClass]="project.status === 80 ? 'current' : ''">
+        <span>Supplied</span>
+      </div> -->
       <div
         class="step"
         [ngClass]="project.status === 100 ? 'current' : ''"
