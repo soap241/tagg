@@ -6,4 +6,5 @@ export interface IProject {
   dateStarted: number;
   actualCompletionDate: number;
   comments: any[];
+  paymentStatus: number;
 }

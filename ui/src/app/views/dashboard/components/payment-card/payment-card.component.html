@@ -9,14 +9,16 @@
     <!--ORDER PROGRESS-->
 
     <div class="col-4">
-      <p class="text-center font-weight-bold h3">Complete</p>
-      <p class="text-center font-weight-bold h3">{{ project.status + "%" }}</p>
+      <p class="text-center font-weight-bold h3">Payment Status</p>
+      <p class="text-center font-weight-bold h3">
+        {{ project.paymentStatus + "%" }}
+      </p>
       <div class="progress">
         <div
           class="progress-bar bg-info"
           role="progressbar"
-          [ngStyle]="{ width: project.status + '%' }"
-          [attr.aria-valuenow]="project.status"
+          [ngStyle]="{ width: project.paymentStatus + '%' }"
+          [attr.aria-valuenow]="project.paymentStatus"
           [attr.aria-valuemin]="0"
           [attr.aria-valuemax]="100"
         ></div>
@@ -36,52 +38,29 @@
     <div class="steps">
       <div
         class="step"
-        [ngClass]="project.status === 0 ? 'current' : ''"
+        [ngClass]="project.paymentStatus === 0 ? 'current' : ''"
         style="left: 32px"
       >
         <span style="width: 5rem; white-space: break-spaces"
           >Order received</span
         >
       </div>
-      <div class="step" [ngClass]="project.status === 15 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces">Processed</span>
-      </div>
-      <div class="step" [ngClass]="project.status === 25 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces">In progress</span>
-      </div>
-      <div class="step" [ngClass]="project.status === 39 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces">Final checks</span>
-      </div>
-      <div class="step" [ngClass]="project.status === 50 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces"
-          >Acceptance Tests</span
-        >
-      </div>
-      <div class="step" [ngClass]="project.status === 63 ? 'current' : ''">
-        <span style="width: 6rem; white-space: break-spaces"
-          >Training And Handing over</span
-        >
-      </div>
-      <div class="step" [ngClass]="project.status === 75 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces"
-          >Client Acceptance</span
-        >
-      </div>
-      <div class="step" [ngClass]="project.status === 87 ? 'current' : ''">
-        <span style="width: 5rem; white-space: break-spaces"
-          >Final Invoicing</span
-        >
+      <div
+        class="step"
+        [ngClass]="project.paymentStatus === 50 ? 'current' : ''"
+      >
+        <span>Half Payment</span>
       </div>
       <div
         class="step"
-        [ngClass]="project.status === 100 ? 'current' : ''"
+        [ngClass]="project.paymentStatus === 100 ? 'current' : ''"
         style="left: -56px"
       >
-        <span>Closed</span>
+        <span>Full Payment</span>
       </div>
     </div>
 
-    <div class="line" [ngStyle]="{ width: project.status + '%' }"></div>
+    <div class="line" [ngStyle]="{ width: project.paymentStatus + '%' }"></div>
   </div>
   <div class="d-flex justify-content-center" *ngIf="!id">
     <button

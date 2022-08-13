@@ -16,6 +16,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 0,
     },
     {
       id: "2",
@@ -25,6 +26,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 50,
     },
     {
       id: "3",
@@ -34,6 +36,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 100,
     },
     {
       id: "4",
@@ -43,6 +46,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 0,
     },
     {
       id: "5",
@@ -52,6 +56,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 50,
     },
     {
       id: "6",
@@ -61,6 +66,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 100,
     },
     {
       id: "7",
@@ -70,6 +76,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 0,
     },
     {
       id: "8",
@@ -79,6 +86,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 50,
     },
     {
       id: "9",
@@ -88,6 +96,7 @@ export class DataService {
       dateStarted: Date.now(),
       actualCompletionDate: Date.now(),
       comments: [],
+      paymentStatus: 100,
     },
   ];
 
