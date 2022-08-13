@@ -86,12 +86,25 @@
 
     <div class="line" [ngStyle]="{ width: project.status + '%' }"></div>
   </div>
-  <div class="d-flex justify-content-center" *ngIf="!id">
-    <button
-      class="btn btn-primary mt-4 mb-2"
-      routerLink="/dashboard/projects/{{ project.id }}"
+  <div class="row d-flex justify-content-center">
+    <div
+      class="d-flex justify-content-center mr-4"
+      *ngIf="!id && project.status === 100"
     >
-      View Details
-    </button>
+      <button
+        class="btn btn-primary mt-4 mb-2"
+        routerLink="/dashboard/projects/job-satisfaction/{{ project.id }}"
+      >
+        Job Satisfaction Survey
+      </button>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="!id">
+      <button
+        class="btn btn-primary mt-4 mb-2"
+        routerLink="/dashboard/projects/{{ project.id }}"
+      >
+        View Details
+      </button>
+    </div>
   </div>
 </div>

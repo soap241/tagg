@@ -49,7 +49,7 @@ const routes: Routes = [
         },
       },
       {
-        path: "job-satisfaction",
+        path: "projects/job-satisfaction/:id",
         component: JobSatisfactionComponent,
         data: {
           title: "Job Satisfaction",

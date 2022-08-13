@@ -64,7 +64,7 @@ export class DataService {
     },
     {
       id: "4",
-      status: 39,
+      status: 100,
       agent: "Priscilla Owusu",
       task: "Buy Property",
       dateStarted: Date.now(),
