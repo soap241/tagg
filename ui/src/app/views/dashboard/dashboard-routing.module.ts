@@ -56,6 +56,13 @@ const routes: Routes = [
         },
       },
       {
+        path: "documents",
+        component: JobSatisfactionComponent,
+        data: {
+          title: "Documents",
+        },
+      },
+      {
         path: "payments",
         component: PaymentsComponent,
         data: {
