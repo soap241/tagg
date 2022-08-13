@@ -39,28 +39,38 @@
         [ngClass]="project.status === 0 ? 'current' : ''"
         style="left: 32px"
       >
-        <span>Order received</span>
+        <span style="width: 5rem; white-space: break-spaces"
+          >Order received</span
+        >
       </div>
       <div class="step" [ngClass]="project.status === 20 ? 'current' : ''">
-        <span>Processed</span>
+        <span style="width: 5rem; white-space: break-spaces">Processed</span>
       </div>
       <div class="step" [ngClass]="project.status === 40 ? 'current' : ''">
-        <span>In progress</span>
+        <span style="width: 5rem; white-space: break-spaces">In progress</span>
       </div>
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
-        <span>Final checks</span>
+        <span style="width: 5rem; white-space: break-spaces">Final checks</span>
       </div>
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
-        <span>Acceptance Tests</span>
+        <span style="width: 5rem; white-space: break-spaces"
+          >Acceptance Tests</span
+        >
       </div>
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
-        <span>Training And Handing over</span>
+        <span style="width: 6rem; white-space: break-spaces"
+          >Training And Handing over</span
+        >
       </div>
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
-        <span>Client Acceptance</span>
+        <span style="width: 5rem; white-space: break-spaces"
+          >Client Acceptance</span
+        >
       </div>
       <div class="step" [ngClass]="project.status === 60 ? 'current' : ''">
-        <span>Final Invoicing</span>
+        <span style="width: 5rem; white-space: break-spaces"
+          >Final Invoicing</span
+        >
       </div>
       <!-- <div class="step" [ngClass]="project.status === 80 ? 'current' : ''">
         <span>Supplied</span>
