@@ -3,4 +3,9 @@
     <button class="btn btn-primary" routerLink="/dashboard">Back</button>
     <h1 class="ml-4">Payments</h1>
   </div>
+
+  <app-payment-card
+    *ngFor="let item of projects"
+    [project]="item"
+  ></app-payment-card>
 </div>
