@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-job-satisfaction",
