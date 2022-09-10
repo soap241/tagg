@@ -1,12 +1,16 @@
 export interface IProject {
   id: string;
   status: number;
-  agent: string;
+  customerName: string;
+  customerId: string;
   task: string;
-  dateStarted: number;
-  actualCompletionDate: number;
+  clientStartDate: number;
+  clientEndDate: number;
+  estimatedEndDate: number;
+  actualEndDate: number;
   comments: any[];
   paymentStatus: number;
+  projectManager: string;
 }
 
 export interface IOrder {

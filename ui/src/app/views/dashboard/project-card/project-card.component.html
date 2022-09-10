@@ -3,8 +3,10 @@
     <!---ORDER DETAILS-->
     <div class="col-4">
       <p class="font-weight-bold h1">Project {{ project.id }}</p>
-      <p class="h6">Agent: {{ project.agent }}</p>
-      <p class="h6">Task: {{ project.task }}</p>
+      <p class="h6">Customer name: {{ project.customerName }}</p>
+      <p class="h6">Customer Id: {{ project.customerId }}</p>
+      <p class="h6">Project: {{ project.task }}</p>
+      <p class="h6">Project Manager: {{ project.projectManager }}</p>
     </div>
     <!--ORDER PROGRESS-->
 
@@ -25,9 +27,12 @@
 
     <!---COMPLETION DATE-->
     <div class="col-4 d-flex flex-column align-items-end">
-      <p class="font-weight-bold h5">Expected Completion</p>
-      <p class="h6">{{ project.actualCompletionDate | date }}</p>
-      <p class="h6">15 days</p>
+      <p class="h6">Client Start Date: {{ project.clientStartDate | date }}</p>
+      <p class="h6">Client End Date: {{ project.clientEndDate | date }}</p>
+      <p class="h6">
+        Estimated End Date: {{ project.estimatedEndDate | date }}
+      </p>
+      <p class="h6">Actual End Date: {{ project.actualEndDate | date }}</p>
     </div>
   </div>
 
