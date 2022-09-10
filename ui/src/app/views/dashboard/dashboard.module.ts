@@ -14,8 +14,10 @@ import { OrdersComponent } from "./orders/orders.component";
 import { PaymentsComponent } from "./payments/payments.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
-import { ViewDetailsComponent } from './view-details/view-details.component';
-import { PaymentCardComponent } from './components/payment-card/payment-card.component';
+import { ViewDetailsComponent } from "./view-details/view-details.component";
+import { PaymentCardComponent } from "./components/payment-card/payment-card.component";
+import { UncompletedProjects } from "./projects/uncompleted-projects/uncompleted-projects.component";
+import { CompletedProjects } from "./projects/completed-projects/completed-projects.component";
 
 @NgModule({
   imports: [
@@ -37,6 +39,8 @@ import { PaymentCardComponent } from './components/payment-card/payment-card.com
     JobSatisfactionComponent,
     ViewDetailsComponent,
     PaymentCardComponent,
+    UncompletedProjects,
+    CompletedProjects,
   ],
 })
 export class DashboardModule {}
