@@ -1,0 +1,206 @@
+.details-container__projects {
+  background: #fcfcfc;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 27px;
+  padding: 0;
+}
+/* .project-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+} */
+.details-container__projects p {
+  margin: 0.2rem;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.client-details .row-item {
+  background: #d9d9d9;
+  /* width: 97px; */
+  border: 0.5px solid #000000;
+  min-height: 26px;
+}
+
+.project-details-container {
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.top-section {
+  padding: 1rem 2rem;
+}
+.top-section .left-col .title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.top-section .right-col {
+  font-size: 14px;
+}
+.top-section .right-col .greybox {
+  background-color: #d9d9d9;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 16px 6px;
+}
+.top-section .right-col .yellowBox {
+  background-color: #f2eaa2;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 16px 6px;
+}
+.top-section .right-col .yellowBox .bigValue {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+}
+.top-section .right-col .title {
+  display: block;
+  font-weight: 700;
+  margin: 0 5px;
+}
+.top-section .right-col .title .value {
+  color: red;
+}
+.top-section .right-col .title .value-blue {
+  color: blue;
+}
+.top-section .right-col .btn-form {
+  margin-top: 1rem;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 0;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  background-color: #d9d9d9;
+}
+.bottom-section {
+  margin-top: 2rem;
+}
+.bottom-section .section-header {
+  background-color: #d9d9d9;
+  text-transform: uppercase;
+  padding: 6px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+.bottom-section .person {
+  padding: 1rem 2rem;
+}
+.bottom-section .person .person-position {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bottom-section .person .person-details {
+  display: block;
+  font-weight: 400;
+  color: #087685;
+}
+.order-container {
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 18px 12px;
+}
+.order-container .section-title {
+  font-size: 20px;
+}
+.order-container .header {
+  margin-top: 32px;
+  color: #42becf;
+}
+.order-container .item-container {
+  margin-top: 16px;
+  padding: 12px 0;
+}
+.order-container .item-container:hover {
+  background-color: #d9d9d9;
+} /*# sourceMappingURL=style.css.map */
+
+.right-box {
+  min-height: 8rem;
+  width: 100%;
+  border-radius: 23px;
+  padding: 1rem 1.5rem;
+  background: #efefef;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  margin-bottom: 1.5rem;
+}
+
+.payment-mode {
+  color: #42becf;
+  font-size: 1rem;
+}
+.momo {
+  min-height: 25px;
+  background: #fcfbfb;
+  border: 1px solid #a7a7a7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+}
+.momo p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 7px;
+  color: #0d0c0c;
+  margin: 0;
+}
+.total-section {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total-section p {
+  font-weight: bold;
+}
+.documentation_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.documentation_heading .link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 8px;
+  cursor: pointer;
+  color: #42becf;
+}
+.documentation_heading .link:hover {
+  text-decoration: underline;
+}
+
+.documentation_card {
+  width: 100%;
+  min-height: 18px;
+  margin: 0 0.1rem;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.documentation_card p {
+  margin: 0;
+  text-transform: capitalize;
+}

@@ -1,0 +1,42 @@
+.bottom-section {
+  margin-top: 2rem;
+}
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-section .section-header {
+  background-color: #d9d9d9;
+  text-transform: uppercase;
+  padding: 6px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.bottom-section .person .person-position {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bottom-section .person .person-details {
+  display: block;
+  font-weight: 400;
+  color: #087685;
+}
+.order-container {
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 18px 12px;
+}
+.order-container .section-title {
+  font-size: 20px;
+}
+.order-container .header {
+  margin-top: 32px;
+  color: #42becf;
+}
+.order-container .item-container {
+  margin-top: 16px;
+  padding: 12px 0;
+}
+.order-container .item-container:hover {
+  background-color: #d9d9d9;
+} /*# sourceMappingURL=style.css.map */
