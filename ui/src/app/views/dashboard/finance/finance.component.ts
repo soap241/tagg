@@ -11,17 +11,16 @@ export class FinanceComponent implements OnInit {
 
   activeTab = 0;
 
-  menuTabs = ['financial Tracking','invoices','summary']
+  menuTabs = ["financial Tracking", "invoices", "summary"];
 
   ngOnInit(): void {}
-
 
   goBack(): void {
     this.location.back();
   }
 
-  onSetActiveTab(tab:number){
-this.activeTab = tab;
+  onSetActiveTab(tab: number) {
+    this.activeTab = tab;
+    console.log(tab);
   }
-
 }
