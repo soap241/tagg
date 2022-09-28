@@ -1,6 +1,91 @@
-<div>
+<div class="container-fluid">
   <div class="d-flex mb-5 align-items-center">
     <button class="btn btn-primary mr-3" (click)="goBack()">Back</button>
-    <h1 class="">Order Tracker</h1>
+    <h1 class="">Financial Tracking</h1>
   </div>
+  <section class="financial-section">
+    <p>
+      <span class="section-title">Financial Tracking</span>
+      <span class="section-subtitle">Payment Mode</span>
+    </p>
+    <div class="row">
+      <div class="col-md-6 col-left">
+        <div class="container-fluid">
+          <div class="table-container">
+            <table>
+              <tr>
+                <td>Momo (1+)</td>
+                <td>Check (1+)</td>
+                <td>Cash (1+)</td>
+                <td>Other (1+)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="table-container-second">
+            <table>
+              <thead>
+                <tr>
+                  <td>Date</td>
+                  <td>Type</td>
+                  <td>Number</td>
+                  <td>Status</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>07/10/22</td>
+                <td>Momo</td>
+                <td>4486</td>
+                <td>Deposited</td>
+              </tr>
+              <tr>
+                <td>08/10/22</td>
+                <td>Check</td>
+                <td>4487</td>
+                <td>Fully Applied</td>
+              </tr>
+              <tr>
+                <td>10/10/22</td>
+                <td>Check</td>
+                <td>4487</td>
+                <td>Fully Applied</td>
+              </tr>
+
+              <tr></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-right">
+        <table cellspacing="0" cellpadding="0">
+          <tr class="table-header">
+            <td colspan="2">Summary</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">subtotal</td>
+            <td class="row-value">42,000</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">discount item</td>
+            <td class="row-value"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">tax total</td>
+            <td class="row-value">1,678,830</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">gift certificate</td>
+            <td class="row-value"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">total</td>
+            <td class="row-value">45,357,661</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">amount due</td>
+            <td class="row-value"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
 </div>
