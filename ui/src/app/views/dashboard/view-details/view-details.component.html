@@ -62,13 +62,13 @@
                 <div class="col-md yellowBox">
                   <p>
                     <span class="title">
-                      Site Progress:
-                      <span class="value">{{ project.status }}</span>
+                          Progress:
+                      <span class="value">{{ project.status + "%" }}</span>
                     </span>
-                    <span class="title">
+                   <!-- <span class="title">
                       Overall Progress:
                       <span class="value">{{ project.status }}</span>
-                    </span>
+                    </span> -->
                   </p>
                   <p>
                     <span class="title">
@@ -86,9 +86,9 @@
                   class="col-md yellowBox d-flex justify-content-center align-items-center"
                 >
                   <div class="container-fluid">
-                    <span class="title d-block text-center">Site Progress</span>
+                    <span class="title d-block text-center"> Progress</span>
                     <span class="bigValue d-block text-center">{{
-                      project.status
+                      project.status + "%"
                     }}</span>
                   </div>
                 </div>
@@ -136,7 +136,7 @@
           <p class="payment-mode">Payment Mode</p>
           <div class="momo row">
             <p>Momo (1+)</p>
-            <p>Check (1+)</p>
+            <p>Check (2+)</p>
             <p>Cash( 1+)</p>
             <p>Other (1+)</p>
           </div>
@@ -156,7 +156,7 @@
             <p class="link">view all</p>
           </div>
           <div class="documentation_card row">
-            <p class="h5">projects</p>
+            <p class="h5">Purchase Order</p>
             <p class="h5">+</p>
           </div>
           <div class="documentation_card row">
@@ -171,9 +171,17 @@
             <p class="h5">invoices</p>
             <p class="h5">+</p>
           </div>
+          <div class="documentation_card row">
+            <p class="h5">Payments</p>
+            <p class="h5">+</p>
+          </div>
+          <div class="documentation_card row">
+            <p class="h5">Others</p>
+            <p class="h5">+</p>
+          </div>
         </div>
         <!--Order tracker-->
-        <div
+       <!--- <div
           class="w-100 bg-secondary right-box"
           style="padding: 0"
           routerLink="{{ '/dashboard/order-tracker/' + project.id }}"
@@ -209,7 +217,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
