@@ -21,6 +21,5 @@ export class FinanceComponent implements OnInit {
 
   onSetActiveTab(tab: number) {
     this.activeTab = tab;
-    console.log(tab);
   }
 }
