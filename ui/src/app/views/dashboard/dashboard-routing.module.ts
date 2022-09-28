@@ -1,3 +1,6 @@
+import { OrderTrackerComponent } from "./order-tracker/order-tracker.component";
+import { DocumentationComponent } from "./documentation/documentation.component";
+import { FinanceComponent } from "./finance/finance.component";
 import { ViewDetailsComponent } from "./view-details/view-details.component";
 import { JobSatisfactionComponent } from "./job-satisfaction/job-satisfaction.component";
 
@@ -67,6 +70,27 @@ const routes: Routes = [
         component: PaymentsComponent,
         data: {
           title: "Payments",
+        },
+      },
+      {
+        path: "finance/:id",
+        component: FinanceComponent,
+        data: {
+          title: "Finance",
+        },
+      },
+      {
+        path: "documentation/:id",
+        component: DocumentationComponent,
+        data: {
+          title: "Documentation",
+        },
+      },
+      {
+        path: "order-tracker/:id",
+        component: OrderTrackerComponent,
+        data: {
+          title: "Order Tracker",
         },
       },
     ],

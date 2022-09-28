@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-finance',
-  templateUrl: './finance.component.html',
-  styleUrls: ['./finance.component.css']
+  selector: "app-finance",
+  templateUrl: "./finance.component.html",
+  styleUrls: ["./finance.component.css"],
 })
 export class FinanceComponent implements OnInit {
+  constructor(private location: Location) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  goBack(): void {
+    this.location.back();
   }
-
 }

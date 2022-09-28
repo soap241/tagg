@@ -11,15 +11,17 @@
           <div class="col-md-4 left-col" data-aos="fade-right">
             <p class="mb-4">
               <span class="title d-block">Project id</span>
-              <span class="title-value d-block">2565 3-Way DB Panel </span>
+              <span class="title-value d-block">{{ project.id }}</span>
             </p>
             <p class="mb-4">
-              <span class="title d-block">3-Way DB Panel </span>
-              <span class="title-value d-block">2565 3-Way DB Panel </span>
+              <span class="title d-block">Project name</span>
+              <span class="title-value d-block">{{ project.task }}</span>
             </p>
             <p class="mb-4">
               <span class="title d-block">CUSTOMER</span>
-              <span class="title-value d-block">Vivo Bottling company </span>
+              <span class="title-value d-block">{{
+                project.customerName
+              }}</span>
             </p>
             <p class="mb-4">
               <span class="title d-block">STATUS</span>
@@ -32,18 +34,27 @@
                 <div class="col-md greybox">
                   <span class="title"
                     >Client Start Date:
-                    <span class="value">10/10/22</span>
+                    <span class="value">{{
+                      project.clientStartDate | date: "shortDate"
+                    }}</span>
                   </span>
                   <span class="title"
-                    >Client End Date: <span class="value">10/10/23</span>
+                    >Client End Date:
+                    <span class="value">{{
+                      project.clientEndDate | date: "shortDate"
+                    }}</span>
                   </span>
                 </div>
                 <div class="col-md greybox">
                   <span class="title"
-                    >Estimated End Date:<span class="value">10/05/23 </span>
+                    >Estimated End Date:<span class="value">{{
+                      project.estimatedEndDate | date: "shortDate"
+                    }}</span>
                   </span>
                   <span class="title"
-                    >Actual End Date:<span class="value"></span>
+                    >Actual End Date:<span class="value">{{
+                      project.actualEndDate | date: "shortDate"
+                    }}</span>
                   </span>
                 </div>
               </div>
@@ -52,17 +63,19 @@
                   <p>
                     <span class="title">
                       Site Progress:
-                      <span class="value">70%</span>
+                      <span class="value">{{ project.status }}</span>
                     </span>
                     <span class="title">
                       Overall Progress:
-                      <span class="value">65%</span>
+                      <span class="value">{{ project.status }}</span>
                     </span>
                   </p>
                   <p>
                     <span class="title">
                       Project Manager:
-                      <span class="value-blue">Priscilla Owusu</span>
+                      <span class="value-blue">{{
+                        project.projectManager
+                      }}</span>
                     </span>
                     <span class="title">
                       Sales Person:<span class="value-blue">Kojo Messe</span>
@@ -74,14 +87,23 @@
                 >
                   <div class="container-fluid">
                     <span class="title d-block text-center">Site Progress</span>
-                    <span class="bigValue d-block text-center">70%</span>
+                    <span class="bigValue d-block text-center">{{
+                      project.status
+                    }}</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row" *ngIf="project.status === 100">
               <div class="col d-flex justify-content-center">
-                <button class="btn-form">Job satisfactory form</button>
+                <button
+                  class="btn w-100 btn-primary"
+                  routerLink="{{
+                    '/dashboard/projects/job-satisfaction/' + project.id
+                  }}"
+                >
+                  Job satisfactory form
+                </button>
               </div>
             </div>
           </div>
@@ -106,7 +128,10 @@
       </div>
       <div class="col-4">
         <!--Financial tracking-->
-        <div class="w-100 bg-secondary right-box">
+        <div
+          class="w-100 bg-secondary right-box"
+          routerLink="{{ '/dashboard/finance/' + project.id }}"
+        >
           <p class="h5">Financial tracking</p>
           <p class="payment-mode">Payment Mode</p>
           <div class="momo row">
@@ -122,7 +147,10 @@
           </div>
         </div>
         <!--Documentation-->
-        <div class="w-100 bg-secondary right-box">
+        <div
+          class="w-100 bg-secondary right-box"
+          routerLink="{{ '/dashboard/documentation/' + project.id }}"
+        >
           <div class="documentation_heading">
             <p class="h5">Documentation</p>
             <p class="link">view all</p>
@@ -145,7 +173,11 @@
           </div>
         </div>
         <!--Order tracker-->
-        <div class="w-100 bg-secondary right-box" style="padding: 0">
+        <div
+          class="w-100 bg-secondary right-box"
+          style="padding: 0"
+          routerLink="{{ '/dashboard/order-tracker/' + project.id }}"
+        >
           <p class="h5" style="padding: 1rem">Order Tracker</p>
           <table class="table table-striped">
             <thead>
