@@ -21,6 +21,7 @@ import { CompletedProjects } from "./projects/completed-projects/completed-proje
 import { OrderTrackerComponent } from './order-tracker/order-tracker.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { FinanceComponent } from './finance/finance.component';
+import { OrderCardComponent } from './order-card/order-card.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { FinanceComponent } from './finance/finance.component';
     OrderTrackerComponent,
     DocumentationComponent,
     FinanceComponent,
+    OrderCardComponent,
   ],
 })
 export class DashboardModule {}
