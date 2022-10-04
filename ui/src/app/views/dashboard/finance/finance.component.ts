@@ -11,7 +11,7 @@ export class FinanceComponent implements OnInit {
 
   activeTab = 0;
 
-  menuTabs = ["financial Tracking", "invoices", "summary"];
+  menuTabs = ["Payments", "invoices", "summary"];
 
   ngOnInit(): void {}
 

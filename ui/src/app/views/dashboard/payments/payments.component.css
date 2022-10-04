@@ -1,0 +1,200 @@
+financial-section p .section-title {
+    font-size: 30px;
+    font-weight: 600;
+    display: block;
+  }
+  .financial-section p .section-subtitle {
+    font-size: 20px;
+    color: #42becf;
+  }
+  .financial-section .row .col-left {
+    margin-bottom: 2rem;
+  }
+  .financial-section .row .col-left .container-fluid .table-container {
+    margin-bottom: 2rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: 1px solid #a7a7a7;
+    padding: 6px 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.25);
+  }
+  .financial-section .row .col-left .container-fluid .table-container table td {
+    padding: 0 8px;
+  }
+  .financial-section
+    .row
+    .col-left
+    .container-fluid
+    .table-container-second
+    table
+    tr {
+    background-color: #aea8a8;
+  }
+  .financial-section
+    .row
+    .col-left
+    .container-fluid
+    .table-container-second
+    table
+    tr:nth-child(even) {
+    background-color: #d9d9d9;
+  }
+  .financial-section
+    .row
+    .col-left
+    .container-fluid
+    .table-container-second
+    table
+    thead {
+    border: 1px solid black;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.25);
+  }
+  .financial-section
+    .row
+    .col-left
+    .container-fluid
+    .table-container-second
+    table
+    thead
+    tr {
+    background-color: white;
+  }
+  .financial-section
+    .row
+    .col-left
+    .container-fluid
+    .table-container-second
+    table
+    td {
+    padding: 0 20px;
+  }
+  .financial-section .col-right table {
+    border: none;
+    text-transform: uppercase;
+  }
+  .financial-section .col-right table .table-header {
+    color: white;
+    background-color: #6d6565;
+    padding: 16px 0;
+  }
+  .financial-section .col-right table td {
+    padding: 10px;
+  }
+  .financial-section .col-right table .table-row {
+    background-color: #d9d9d9;
+    padding: 15px;
+  }
+  .financial-section .col-right table .table-row .row-header {
+    width: 50%;
+  }
+  .financial-section .col-right table .table-row .row-value {
+    width: 50%;
+    text-align: right;
+    font-weight: bold;
+  } /*# sourceMappingURL=style.css.map */
+  
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h3{
+  text-transform: uppercase;
+  font-weight: normal;
+  }
+  
+  .tabs{
+    width: 600px;
+    display: block;
+    margin: 40px auto;
+    position: relative;
+  }
+  
+  .tabs .tab{
+    float: left;
+    display: block;
+  }
+  
+  .tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .tabs .tab>label {
+    display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #FFF;
+    background: #4A83FD;
+  }
+  
+  .tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 600px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background: #303030;
+    color: #DFDFDF;
+    
+    opacity:0;
+    transition: opacity 400ms ease-out;
+  }
+  
+  .tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #303030;
+    color: #F5F5F5;
+  }
+  
+  .tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+  }

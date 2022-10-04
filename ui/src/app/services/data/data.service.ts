@@ -36,7 +36,7 @@ export class DataService {
       id: "1",
       status: 15,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "3 WAY DB PANEL",
       clientStartDate: Date.now(),
       clientEndDate: Date.now(),
       customerId: "1",
@@ -50,7 +50,7 @@ export class DataService {
       id: "2",
       status: 25,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "BUNGE LOADERS",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -65,7 +65,7 @@ export class DataService {
       id: "3",
       status: 50,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "PHASE CORRECTION(PPA)",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -80,7 +80,7 @@ export class DataService {
       id: "4",
       status: 100,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "PHASE CORRECTION(ASL)",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -95,7 +95,7 @@ export class DataService {
       id: "5",
       status: 25,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "2000A ATS Panel",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -110,7 +110,7 @@ export class DataService {
       id: "6",
       status: 63,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "2000A ATS Panel",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -125,7 +125,7 @@ export class DataService {
       id: "7",
       status: 75,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "250A Switchgear Panel",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -140,7 +140,7 @@ export class DataService {
       id: "8",
       status: 87,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "1250A 10-Way  DB Panel",
       clientStartDate: Date.now(),
 
       comments: [],
@@ -155,7 +155,7 @@ export class DataService {
       id: "9",
       status: 63,
       customerName: "Priscilla Owusu",
-      task: "Buy Property",
+      task: "1600A DB Panel",
       clientStartDate: Date.now(),
 
       comments: [],
