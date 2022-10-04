@@ -3,8 +3,8 @@
     <!---ORDER DETAILS-->
     <div class="col-4">
       <p class="font-weight-bold h1">Project {{ project.id }}</p>
-     <p class="h6">Customer name: {{ project.customerName }}</p> 
-    <!--  <p class="h6">Customer Id: {{ project.customerId }}</p>
+      <p class="h6">Customer name: {{ project.customerName }}</p>
+      <!--  <p class="h6">Customer Id: {{ project.customerId }}</p>
       <p class="h6">Project: {{ project.task }}</p>
       <p class="h6">Project Manager: {{ project.projectManager }}</p> -->
     </div>
@@ -32,7 +32,7 @@
       <p class="h6">
         Estimated End Date: {{ project.estimatedEndDate | date }}
       </p>
-      <p class="h6">Actual End Date: {{ project.actualEndDate | date }}</p> 
+      <p class="h6">Actual End Date: {{ project.actualEndDate | date }}</p>
     </div>
   </div>
 
@@ -92,10 +92,7 @@
     <div class="line" [ngStyle]="{ width: project.status + '%' }"></div>
   </div>
   <div class="row d-flex justify-content-center">
-    <div
-      class="d-flex justify-content-center mr-4"
-      *ngIf="!id && project.status === 100"
-    >
+    <div class="d-flex justify-content-center mr-4">
       <button
         class="btn btn-primary mt-4 mb-2"
         routerLink="/dashboard/projects/job-satisfaction/{{ project.id }}"
