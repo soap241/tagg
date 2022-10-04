@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     {
       title: "Documents",
       //link: "/dashboard/documents",
-      link: "/dashboard/documentation/1",
+      link: "/dashboard/documentation",
       imageUrl: "../../../assets/img/job.png",
       buttonText: "View Documents",
     },
