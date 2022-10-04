@@ -1,3 +1,4 @@
+import { DocumentationDetailsComponent } from "./documentation-details/documentation-details.component";
 import { OrderTrackerComponent } from "./order-tracker/order-tracker.component";
 import { DocumentationComponent } from "./documentation/documentation.component";
 import { FinanceComponent } from "./finance/finance.component";
@@ -80,11 +81,15 @@ const routes: Routes = [
         },
       },
       {
-        path: "documentation/:id",
+        path: "documentation",
         component: DocumentationComponent,
         data: {
           title: "Documentation",
         },
+      },
+      {
+        path: "documentation/:id",
+        component: DocumentationDetailsComponent,
       },
       {
         path: "order-tracker/:id",

@@ -1,62 +1,26 @@
-<main>
+<div>
   <div class="d-flex mb-5 align-items-center">
     <button class="btn btn-primary mr-3" (click)="goBack()">Back</button>
     <h1 class="">Documentation</h1>
   </div>
   <div class="my-5">
-    <div class="w-100">
-      <div class="w-100 bg-secondary right-box">
-        <div class="documentation_heading">
-          <p class="h5">Documentation</p>
-          <p class="link">view all</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Purchase Order</p>
-          <p class="h5">+ ( 1 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Drawings</p>
-          <p class="h5">+ ( 3 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Change request</p>
-          <p class="h5">+ ( 1 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">invoices</p>
-          <p class="h5">+( 2 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Payments</p>
-          <p class="h5">+ ( 3 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Other</p>
-          <p class="h5">+( 1 )</p>
-        </div>
-        <div class="documentation_card row">
-          <p class="h5">Customer Complaint</p>
-          <p class="h5">( 1 )</p>
-        </div>
-      
+    <div
+      class="shadow-sm p-3 mb-3 bg-white rounded"
+      *ngFor="let project of projects"
+    >
+      <div class="">
+        <p class="h3 mb-3">Project {{ project.id }}</p>
+        <p class="h4">{{ project.task }}</p>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button
+          class="btn btn-primary"
+          routerLink="/dashboard/documentation/{{ project.id }}"
+        >
+          View Documentation
+        </button>
       </div>
     </div>
   </div>
-  <div class="row bottom-section">
-    <p class="section-header px-3">Contacts</p>
-    <p class="person">
-      <span class="person-position"> Project Manager </span>
-      <span class="person-details">Kwame Owusu</span>
-      <span class="person-details"
-        >+233 0888 76795 / kowusu@automationgh.com</span
-      >
-    </p>
-    <p class="person">
-      <span class="person-position"> Sales person </span>
-      <span class="person-details">Kofi Messe</span>
-      <span class="person-details"
-        >+233 7898 76705 / kmesse@automationgh.com</span
-      >
-    </p>
-  </div>
-</main>
+</div>

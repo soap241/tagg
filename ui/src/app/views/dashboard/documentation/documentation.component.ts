@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
+import { IProject } from "../../../models/@types";
+import { DataService } from "../../../services/data/data.service";
 
 @Component({
   selector: "app-documentation",
@@ -7,9 +9,14 @@ import { Location } from "@angular/common";
   styleUrls: ["./documentation.component.css"],
 })
 export class DocumentationComponent implements OnInit {
-  constructor(private location: Location) {}
+  constructor(private location: Location, private dataService: DataService) {}
+  projects: IProject[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.projects = this.dataService
+      .getProjects()
+      .filter((item) => item.status !== 100);
+  }
 
   goBack(): void {
     this.location.back();
