@@ -19,4 +19,5 @@ export interface IOrder {
   productPrice: number;
   quantity: number;
   totalAmount: number;
+  orderStatus: number;
 }

@@ -14,6 +14,7 @@ export class DataService {
       productPrice: 100,
       quantity: 1,
       totalAmount: 100,
+      orderStatus: 20,
     },
     {
       id: "2",
@@ -21,6 +22,7 @@ export class DataService {
       productPrice: 200,
       quantity: 2,
       totalAmount: 400,
+      orderStatus: 100,
     },
     {
       id: "3",
@@ -28,6 +30,23 @@ export class DataService {
       productPrice: 300,
       quantity: 2,
       totalAmount: 600,
+      orderStatus: 60,
+    },
+    {
+      id: "4",
+      productName: "Product 3",
+      productPrice: 300,
+      quantity: 2,
+      totalAmount: 600,
+      orderStatus: 60,
+    },
+    {
+      id: "5",
+      productName: "Product 4",
+      productPrice: 300,
+      quantity: 2,
+      totalAmount: 600,
+      orderStatus: 60,
     },
   ];
 

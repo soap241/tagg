@@ -1,3 +1,4 @@
+import { CustomerComplaintsComponent } from "./customer-complaints/customer-complaints.component";
 import { DocumentationDetailsComponent } from "./documentation-details/documentation-details.component";
 import { OrderTrackerComponent } from "./order-tracker/order-tracker.component";
 import { DocumentationComponent } from "./documentation/documentation.component";
@@ -94,6 +95,13 @@ const routes: Routes = [
       {
         path: "order-tracker/:id",
         component: OrderTrackerComponent,
+        data: {
+          title: "Order Tracker",
+        },
+      },
+      {
+        path: "customer-complaints",
+        component: CustomerComplaintsComponent,
         data: {
           title: "Order Tracker",
         },

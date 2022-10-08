@@ -1,0 +1,142 @@
+<div class="py-4">
+  <div class="d-flex mb-5 align-items-center">
+    <button class="btn btn-primary" (click)="goBack()">Back</button>
+    <h1 class="ml-4">Customer Complaints form</h1>
+  </div>
+  <div class="bg-white shadow-sm rounded-lg">
+    <div
+      class=""
+      style="
+        height: 20rem;
+        background: url('../../../../assets/img/customerForm.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    ></div>
+
+    <!--<div class="pt-2 text-center">
+      <h1 class="">Project {{ projectId }}</h1>
+      <h4>{{ project.task }}</h4>
+    </div>
+  -->
+    <form class="needs-validation p-4" novalidate>
+      <div class="form-row">
+        <div class="col-12 mb-3">
+          <label for="validationCustom01">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Mark"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="jondoe@gmail.com"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <div class="invalid-feedback">Email</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="phone number..."
+            required
+          />
+          <div class="invalid-feedback">
+            Please provide a valid phone number.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="text">Project id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text"
+            placeholder="1"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid project id.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="complaint-title">Complaint Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="complaint-tile"
+            placeholder="eg. hello..."
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid project id.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="date-reported">Date reported</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date-reported"
+            placeholder="eg. hello..."
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid project id.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="status">Status</label>
+          <input type="text" class="form-control" id="status" required />
+          <div class="invalid-feedback">Please provide a valid project id.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="work-done">Work done</label>
+          <input type="text" class="form-control" id="work-done" required />
+          <div class="invalid-feedback">Please provide a valid project id.</div>
+        </div>
+      </div>
+      <div class="form-group my-3">
+        <h6 class="">General Comments</h6>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+      <div class="form-group my-3">
+        <h6 class="">Description of complains</h6>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+  </div>
+</div>

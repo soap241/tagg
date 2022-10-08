@@ -24,6 +24,9 @@ import { FinanceComponent } from './finance/finance.component';
 import { OrderCardComponent } from './order-card/order-card.component';
 import { DocumentationCardComponent } from './documentation-card/documentation-card.component';
 import { DocumentationDetailsComponent } from './documentation-details/documentation-details.component';
+import { CompletedOrdersComponent } from './orders/completed-orders/completed-orders.component';
+import { UncompletedOrdersComponent } from './orders/uncompleted-orders/uncompleted-orders.component';
+import { CustomerComplaintsComponent } from './customer-complaints/customer-complaints.component';
 
 @NgModule({
   imports: [
@@ -53,6 +56,9 @@ import { DocumentationDetailsComponent } from './documentation-details/documenta
     OrderCardComponent,
     DocumentationCardComponent,
     DocumentationDetailsComponent,
+    CompletedOrdersComponent,
+    UncompletedOrdersComponent,
+    CustomerComplaintsComponent,
   ],
 })
 export class DashboardModule {}
