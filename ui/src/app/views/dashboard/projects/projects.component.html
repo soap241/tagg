@@ -1,0 +1,33 @@
+<div class="py-4">
+  <div class="d-flex mb-3 align-items-center">
+    <button class="btn btn-primary" routerLink="/dashboard">Back</button>
+    <h1 class="ml-4">Projects</h1>
+  </div>
+  <div>
+    <ul class="nav nav-pills mb-3">
+      <li class="nav-item mr-2" (click)="setActiveTab('uncompleted')">
+        <button
+          class="btn nav-link"
+          [ngClass]="activeTab === 'uncompleted' ? 'active' : ''"
+          aria-current="page"
+        >
+          Uncompleted
+        </button>
+      </li>
+      <li class="nav-item mr-2" (click)="setActiveTab('completed')">
+        <button
+          class="btn nav-link"
+          [ngClass]="activeTab === 'completed' ? 'active' : ''"
+        >
+          Jobs Completed
+        </button>
+      </li>
+    </ul>
+  </div>
+  <app-completed-projects
+    *ngIf="activeTab === 'completed'"
+  ></app-completed-projects>
+  <app-uncompleted-projects
+    *ngIf="activeTab === 'uncompleted'"
+  ></app-uncompleted-projects>
+</div>

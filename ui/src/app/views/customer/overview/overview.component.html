@@ -1,0 +1,243 @@
+<div class="animated fadeIn" style="margin-top: 1.5rem;">
+  <div class="row" style="flex-direction:column;">
+    <div class="col-lg-12 ">
+      <div class="card">
+        <div class="card-header">
+          <div style="display: flex;">
+            <div class="x-list-title">
+              <i class="fa fa-users x-list-title-icon"></i> Customers List
+            </div>
+            <div style="flex: 1 1 0;"></div>
+            <div>
+              <button class="btn btn-sm btn-ghost-dark" (click)="gotoCreateCustomer()">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="overflow-x: scroll ;" >
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>E-mail Address</th>
+                <th>Date Registered</th>
+                <th>Status</th>
+                <th style="width: 140px;">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of customers; index as i;" class="x-table-row">
+                <td>{{ u.company_name }}</td>
+                <td>{{ u.email_address }}</td>
+                <td>{{ u.created_at | date:'dd/MM/y'}}</td>
+                <td style="font-size: 1rem;">
+                 <span class="badge badge-{{u.can_login? 'success' : 'danger'}}">{{u.can_login? 'Active' :
+                    'Inactive'}}</span>
+                </td>
+                <td class="x-controls-td">
+                  <button class="btn btn-sm btn-ghost-warning" type="button" (click)="gotoCreateCustomer(u)">
+                    <i class="cui-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-ghost-danger" type="button" (click)="call_delete_customer_modal(i)">
+                    <i class="cui-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div bsModal #CreateCustomerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  [config]="{backdrop: 'static', keyboard: false}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">New Customer</h4>
+        <button type="button" class="close" (click)="CreateCustomerModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="createCustomerForm" (ngSubmit)="submitCreate()">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="company_name" placeholder="Company Name">
+          </div>
+          <div class="text-danger mx-auto mb-3" *ngIf="company_name.invalid && (company_name.dirty || company_name.touched)">
+            <i *ngIf="company_name.errors?.required">Customer's company name is required</i>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="netsuite_customer_id" placeholder="Netsuite ID">
+          </div>
+          <div class="text-danger mx-auto mb-3" *ngIf="netsuite_customer_id.invalid && (netsuite_customer_id.dirty || netsuite_customer_id.touched)">
+            <i *ngIf="netsuite_customer_id.errors?.required">Customer's netsuite id is required</i>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            </div>
+            <input type="text" class="form-control" formControlName="email_address" placeholder="Email Address">
+          </div>
+          <div class="text-danger mx-auto mb-3" *ngIf="email_address.invalid && (email_address.dirty || email_address.touched)">
+            <i *ngIf="email_address.errors?.required">Customer's company email is required</i>
+            <i *ngIf="email_address.errors?.email">Customer's company email is badly formatted</i>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-chrome"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="web_address" placeholder="Web Address">
+          </div>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="phone" placeholder="Phone">
+          </div>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="alt_phone" placeholder="Alt Phone" d>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-fax"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" formControlName="fax_number" placeholder="Fax Number" >
+          </div>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+            </div>
+            <textarea autocomplete="off" class="form-control" formControlName="address"  cols="30" rows="5" placeholder="Type company address here ...."></textarea>
+            <input type="text" autocomplete="off" class="form-control"  placeholder="Address" formControlName="address"> -->
+          <!-- </div>
+        </div> -->
+
+
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="CreateCustomerModal.hide()">Cancel</button>
+          <button type="submit" class="btn btn-primary"
+            [disabled]="!createCustomerForm.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>  -->
+
+<!-- <div bsModal #EditCustomerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  [config]="{backdrop: 'static', keyboard: false}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Customer</h4>
+        <button type="button" class="close" (click)="EditCustomerModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #tvar_edit_customer_form="ngForm" (submit)="submitEdit();">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.company_name"
+              name="focus_customer_company_name" placeholder="Company name" #tvar_focus_customer_company_name="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.email_address"
+              name="focus_customer_email_address" placeholder="Email Address" #tvar_focus_customer_email_address="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-chrome"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.web_address"
+              name="focus_customer_web_address" placeholder="Web Address" #tvar_focus_customer_web_address="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.phone"
+              name="#tvar_focus_customer_phone" placeholder="Phone" #tvar_focus_customer_phone="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.alt_phone"
+              name="#tvar_focus_customer_alt_phone" placeholder="Alt Phone" #tvar_focus_customer_alt_phone="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-fax"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.fax_number"
+              name="#tvar_focus_customer_fax_number" placeholder="Fax Number" #tvar_focus_customer_fax_number="ngModel" minlength="5"
+              required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+            </div>
+            <input type="text" autocomplete="off" class="form-control" [(ngModel)]="focus_customer.address"
+              name="#tvar_focus_customer_address" placeholder="Address" #tvar_focus_customer_address="ngModel" minlength="5"
+              required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button *ngIf="focus_customer.id != this_customer_id" type="button" class="btn btn-warning"
+            (click)="call_reset_password_modal()">Reset Password</button> -->
+          <!-- <button type="button" class="btn btn-secondary" (click)="EditCustomerModal.hide()">Cancel</button>
+          <button type="submit" class="btn btn-primary"
+            [disabled]="!tvar_edit_customer_form.form.valid">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>  -->
+
+<div bsModal #DeleteCustomerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Customer</h4>
+        <button type="button" class="close" (click)="DeleteCustomerModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Delete customer {{ focus_customer.companyname }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="DeleteCustomerModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-danger" [disabled]="form_submit_active"
+          (click)="delete_customer()">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

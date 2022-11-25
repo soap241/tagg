@@ -1,0 +1,74 @@
+.x-nav-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: #0006;
+}
+
+.x-toaster {
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	width: 20%;
+	z-index: 999999;
+}
+
+.x-toaster *{
+	box-sizing:border-box;
+}
+
+.x-toaster .x-toast{
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 6px;
+	padding: 15px 30px 15px 50px;
+	width: 100%;
+	border-radius: 0.25rem;
+	background-position: 15px;
+	background-repeat: no-repeat;
+	background-image:none!important;
+	color: #fff;
+	opacity: 1;
+  transition: 0.25s;
+}
+
+.x-toast .x-toast-icon{
+	position: relative;
+	font-size: 25px;
+	line-height: 10px;
+	float: left;
+	margin: 0 0 0 -37px
+}
+
+.x-toaster .x-toast:hover {
+	opacity: 0.7;
+	cursor:pointer;
+}
+
+.x-toast{
+	background-color:#20a8d8;
+}
+.x-toast-success{
+	background-color:#4dbd74;
+}
+.x-toast-error{
+	background-color:#f86c6b;
+}
+.x-toast-info{
+	background-color:#63c2de;
+}
+.x-toast-load, .x-toast-confirm{
+	background-color:#ffc107;
+}
+
+.x-toast-title{
+	font-weight: 700;
+}
+
+.x-toast-message{
+	-ms-word-wrap: break-word;
+	word-wrap: break-word
+}

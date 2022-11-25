@@ -1,0 +1,283 @@
+<div class="py-4">
+  <div class="d-flex mb-5 align-items-center">
+    <button class="btn btn-primary" (click)="goBack()">Back</button>
+    <h1 class="ml-4">Job Satisfaction form</h1>
+  </div>
+  <div class="bg-white shadow-sm rounded-lg">
+    <div
+      class=""
+      style="
+        height: 20rem;
+        background: url('../../../../assets/img/customerForm.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    ></div>
+    <div class="pt-2 text-center">
+      <h1 class="">Project {{ projectId }}</h1>
+      <h4>{{ project.task }}</h4>
+    </div>
+    <form class="needs-validation p-4" novalidate>
+      <div class="form-row">
+        <div class="col-12 mb-3">
+          <label for="validationCustom01">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Mark"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="jondoe@gmail.com"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <div class="invalid-feedback">Email</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="phone number..."
+            required
+          />
+          <div class="invalid-feedback">
+            Please provide a valid phone number.
+          </div>
+        </div>
+      </div>
+      <!--Schedule-->
+      <div class="form-group my-3">
+        <h6 class="">Schedule</h6>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="OnSchedule"
+            value="onSchedule"
+          />
+          <label class="form-check-label" for="OnSchedule">On Schedule</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="behindSchedule"
+            value="behindSchedule"
+          />
+          <label class="form-check-label" for="behindSchedule"
+            >behind Schedule</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="aheadOfSchedule"
+            value="aheadOfSchedule"
+          />
+          <label class="form-check-label" for="aheadOfSchedule"
+            >Ahead Of Schedule</label
+          >
+        </div>
+      </div>
+      <!---Scope-->
+      <div class="form-group my-3">
+        <h6 class="">Scope</h6>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="scope"
+            id="metRequirements"
+            value="metRequirements"
+          />
+          <label class="form-check-label" for="metRequirements"
+            >The scope met my requirements</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="scope"
+            id="notMetRequirements"
+            value="notMetRequirements"
+          />
+          <label class="form-check-label" for="notMetRequirements"
+            >The scope did not meet my requirements</label
+          >
+        </div>
+      </div>
+      <!---Quality-->
+      <div class="form-group my-3">
+        <h6 class="">Quality</h6>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="quality"
+            id="exceedExpectations"
+            value="exceedExpectations"
+          />
+          <label class="form-check-label" for="exceedExpectations"
+            >Exceed expectations</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="quality"
+            id="meetExpectations"
+            value="meetExpectations"
+          />
+          <label class="form-check-label" for="meetExpectations"
+            >Meets Expectations</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="quality"
+            id="belowExpectations"
+            value="belowExpectations"
+          />
+          <label class="form-check-label" for="belowExpectations"
+            >Does not meet expectations</label
+          >
+        </div>
+      </div>
+      <!---Communication-->
+      <div class="form-group my-3">
+        <h6 class="">Communication</h6>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="communication"
+            id="frequency-was-good"
+            value="frequency was good"
+          />
+          <label class="form-check-label" for="frequency-was-good"
+            >Frequency was good</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="communication"
+            id="content-was-useful"
+            value="content was useful"
+          />
+          <label class="form-check-label" for="content-was-useful"
+            >Content was useful</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="communication"
+            id="form-of-communication-was-good"
+            value="form of communication was good"
+          />
+          <label class="form-check-label" for="form-of-communication-was-good"
+            >Form of communication was good</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="communication"
+            id="needs-improvement"
+            value="needs improvement"
+          />
+          <label class="form-check-label" for="needs-improvement"
+            >Needs improvement</label
+          >
+        </div>
+      </div>
+      <!---Overall-->
+      <div class="form-group my-3">
+        <h6 class="">Overall</h6>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="overall"
+            id="very-good"
+            value="very good"
+          />
+          <label class="form-check-label" for="very-good">Very good</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="overall"
+            id="good"
+            value="good"
+          />
+          <label class="form-check-label" for="very-good">Good</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="overall"
+            id="satisfactory"
+            value="satisfactory"
+          />
+          <label class="form-check-label" for="satisfactory"
+            >Satisfactory</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="quality"
+            id="poor"
+            value="poor"
+          />
+          <label class="form-check-label" for="poor">poor</label>
+        </div>
+      </div>
+      <div class="form-group my-3">
+        <h6 class="">Customer Comments and Sign Off (for completed jobs)</h6>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"module": "commonjs",
+		"removeComments": true,
+		"target": "es2017"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
+}

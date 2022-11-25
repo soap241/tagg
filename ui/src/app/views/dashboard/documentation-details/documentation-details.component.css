@@ -1,0 +1,68 @@
+.bottom-section {
+  margin-top: 2rem;
+}
+.right-box {
+  min-height: 8rem;
+  width: 100%;
+  border-radius: 23px;
+  padding: 1rem 1.5rem;
+  background: #efefef;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  margin-bottom: 1.5rem;
+}
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-section .section-header {
+  background-color: #d9d9d9;
+  text-transform: uppercase;
+  padding: 6px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.bottom-section .person .person-position {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bottom-section .person .person-details {
+  display: block;
+  font-weight: 400;
+  color: #087685;
+}
+.documentation_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.documentation_heading .link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 8px;
+  cursor: pointer;
+  color: #42becf;
+}
+.documentation_heading .link:hover {
+  text-decoration: underline;
+}
+
+.documentation_card {
+  width: 100%;
+  min-height: 18px;
+  margin: 0 0.1rem;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.documentation_card p {
+  margin: 0;
+  text-transform: capitalize;
+}

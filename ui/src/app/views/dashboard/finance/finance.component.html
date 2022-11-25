@@ -1,0 +1,231 @@
+<div class="container-fluid">
+  <div class="d-flex mb-5 align-items-center">
+    <button class="btn btn-primary mr-3" (click)="goBack()">Back</button>
+    <h1 class="">Financial Tracking</h1>
+  </div>
+  <div class="block">
+    <div>
+      <ul class="nav nav-pills mb-3">
+        <li
+          class="nav-item mr-2"
+          *ngFor="let item of menuTabs; let index = index"
+          (click)="onSetActiveTab(index)"
+        >
+          <button
+            class="btn nav-link px-4 py-2 text-capitalize"
+            [ngClass]="
+              activeTab === index ? 'active' : 'border border-secondary'
+            "
+            aria-current="page"
+          >
+            {{ item }}
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section class="financial-section" *ngIf="activeTab === 0">
+      <p>
+        <span class="section-title">Payments</span>
+        <span class="section-subtitle">Payment Mode</span>
+      </p>
+      <div class="row">
+        <div class="col-md-6 col-left">
+          <div class="container-fluid">
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Momo (1)</td>
+                  <td>Check (2)</td>
+                  <td>Cash (0)</td>
+                  <td>Other (0)</td>
+                </tr>
+              </table>
+            </div>
+            <p><span class="section-subtitle"> Details </span></p>
+            <div class="table-container-second">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Date</td>
+                    <td>Type</td>
+                    <td>Amount</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>10/01/2022</td>
+                  <td>Momo</td>
+                  <td>5,000.00</td>
+                  <td>Deposited</td>
+                </tr>
+                <tr>
+                  <td>08/02/2022</td>
+                  <td>Check</td>
+                  <td>10,000.00</td>
+                  <td>Fully Applied</td>
+                </tr>
+                <tr>
+                  <td>10/03/2022</td>
+                  <td>Check</td>
+                  <td>12,000.00</td>
+                  <td>Fully Applied</td>
+                </tr>
+
+                <tr></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-right">
+          <table cellspacing="0" cellpadding="0">
+            <tr class="table-header">
+              <td colspan="2">Summary</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">Total</td>
+              <td class="row-value">37,000.00</td>
+            </tr>
+            <!--<tr class="table-row">
+              <td class="row-header">discount item</td>
+              <td class="row-value"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">tax total</td>
+              <td class="row-value">1,678,830</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">gift certificate</td>
+              <td class="row-value"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">total</td>
+              <td class="row-value">45,357,661</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">amount due</td>
+              <td class="row-value"></td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="financial-section" *ngIf="activeTab === 1">
+      <p>
+        <span class="section-title">Invoices</span>
+      </p>
+      <div class="row">
+        <div class="col-md-6 col-left">
+          <div class="container-fluid">
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Invoices (4)</td>
+                </tr>
+              </table>
+            </div>
+            <p><span class="section-subtitle"> Details </span></p>
+            <div class="table-container-second">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Date</td>
+                    <td>Number</td>
+                    <td>Amount</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>01/01/2022</td>
+                  <td>34589</td>
+                  <td>5,000.00</td>
+                  <td>Paid</td>
+                </tr>
+                <tr>
+                  <td>01/02/2022</td>
+                  <td>56784</td>
+                  <td>10,000.00</td>
+                  <td>Paid</td>
+                </tr>
+                <tr>
+                  <td>03/03/2022</td>
+                  <td>56004</td>
+                  <td>12,000.00</td>
+                  <td>Paid</td>
+                </tr>
+                <tr>
+                  <td>04/09/2022</td>
+                  <td>56045</td>
+                  <td>10,000.00</td>
+                  <td>Submitted</td>
+                </tr>
+
+                <tr></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-right">
+          <table cellspacing="0" cellpadding="0">
+            <tr class="table-header">
+              <td colspan="2">Summary</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">Total</td>
+              <td class="row-value">27,000.00</td>
+            </tr>
+            <!--<tr class="table-row">
+              <td class="row-header">discount item</td>
+              <td class="row-value"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">tax total</td>
+              <td class="row-value">1,678,830</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">gift certificate</td>
+              <td class="row-value"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">total</td>
+              <td class="row-value">45,357,661</td>
+            </tr>
+            <tr class="table-row">
+              <td class="row-header">amount due</td>
+              <td class="row-value"></td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+      
+    </section>
+    <section class="financial-section" *ngIf="activeTab === 2">
+      <h1>Summary</h1>
+      <div class="col-md-6 col-right">
+        <table cellspacing="0" cellpadding="0">
+          <tr class="table-header">
+            <td colspan="2">Summary</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">Order Value</td>
+            <td class="row-value">50,000.00</td>
+          </tr>
+          
+          <tr class="table-row">
+            <td class="row-header">Total Invoices</td>
+            <td class="row-value">37,000.00</td>
+          </tr>
+         
+          <tr class="table-row">
+            <td class="row-header">Total Payments</td>
+            <td class="row-value">27,000.00</td>
+          </tr>
+          <tr class="table-row">
+            <td class="row-header">Balance</td>
+            <td class="row-value">23,000.00</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

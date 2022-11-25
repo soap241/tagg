@@ -1,0 +1,97 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form #tvar_login_user_form="ngForm" (submit)="user_login()">
+                  <div class="row">
+                    <div class="col-4">
+                      <h1>Login</h1>
+                    </div>
+                    <div class="col-8 text-right text-bold">
+                      <img
+                        src="assets/img/brand/logo.png"
+                        alt="logo"
+                        style="
+                          height: 75px;
+                          position: absolute;
+                          right: 0px;
+                          top: -10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <p>&nbsp;</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="cui-user"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="login_user.username"
+                      name="login_user_username"
+                      placeholder="Username"
+                      #tvar_login_user_username="ngModel"
+                      minlength="5"
+                      autocomplete="username"
+                      required
+                    />
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="cui-lock-locked"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      [(ngModel)]="login_user.password"
+                      placeholder="Password"
+                      name="login_user_password"
+                      #tvar_login_user_password="ngModel"
+                      minlength="5"
+                      required
+                    />
+                  </div>
+                  <div class="row" style="justify-content: flex-end">
+                    <div
+                      class="col-8 text-{{
+                        login_success ? 'success' : 'danger'
+                      }}"
+                      style="line-height: 26px"
+                    >
+                      <i
+                        *ngIf="login_msg"
+                        class="cui-circle-{{ login_success ? 'check' : 'x' }}"
+                        style="font-size: 1rem; position: relative; top: 2px"
+                      ></i>
+                      {{ login_msg }}
+                    </div>
+                    <div class="col-4 text-right">
+                      <button
+                        type="submit"
+                        class="btn btn-primary px-4"
+                        [disabled]="
+                          !tvar_login_user_form.form.valid || login_active
+                        "
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

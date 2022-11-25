@@ -1,0 +1,75 @@
+<div class="shadow-sm p-3 mb-3 bg-white rounded" style="overflow-x: scroll;">
+  <div class="row">
+    <!---ORDER DETAILS-->
+    <div class="col-4">
+      <p class="font-weight-bold h1">Project {{ order.id }}</p>
+      <p class="h6">Order id: {{ order.id }}</p>
+    </div>
+    <!--ORDER PROGRESS-->
+
+    <div class="col-4">
+      <p class="text-center font-weight-bold h3">Progress</p>
+      <p class="text-center font-weight-bold h3">
+        {{ order.orderStatus + "%" }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar bg-info"
+          role="progressbar"
+          [ngStyle]="{ width: order.orderStatus + '%' }"
+          [attr.aria-valuenow]="order.orderStatus"
+          [attr.aria-valuemin]="0"
+          [attr.aria-valuemax]="100"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <!--TIME LINE-->
+  <div class="horizontal timeline">
+    <div class="steps">
+      <div
+        class="step"
+        [ngClass]="order.orderStatus === 0 ? 'current' : ''"
+        style="left: 32px"
+      >
+        <span style="width: 5rem; white-space: break-spaces"
+          >Order received</span
+        >
+      </div>
+      <div class="step" [ngClass]="order.orderStatus === 20 ? 'current' : ''">
+        <span style="width: 5rem; white-space: break-spaces">Aknowledged</span>
+      </div>
+      <div class="step" [ngClass]="order.orderStatus === 40 ? 'current' : ''">
+        <span style="width: 5rem; white-space: break-spaces"
+          >Final checks</span
+        >
+      </div>
+      <div class="step" [ngClass]="order.orderStatus === 60 ? 'current' : ''">
+        <span style="width: 5rem; white-space: break-spaces">Scheduled for delivery</span>
+      </div>
+      <div class="step" [ngClass]="order.orderStatus === 80 ? 'current' : ''">
+        <span style="width: 5rem; white-space: break-spaces">Delivered</span>
+      </div>
+      <div
+        class="step"
+        [ngClass]="order.orderStatus === 100 ? 'current' : ''"
+        style="left: -56px"
+      >
+        <span>Closed</span>
+      </div>
+    </div>
+
+    <div class="line" [ngStyle]="{ width: order.orderStatus + '%' }"></div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="d-flex justify-content-center" *ngIf="!id">
+      <button
+        class="btn btn-primary mt-4 mb-2"
+        routerLink="/dashboard/order-tracker/{{ order.id }}"
+      >
+        View Details
+      </button>
+    </div>
+  </div>
+</div>

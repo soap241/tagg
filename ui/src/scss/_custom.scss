@@ -1,0 +1,190 @@
+// custom classes
+.x-input-validity {
+	height: 100%;
+	width: 5px;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	padding: 0 !important;
+}
+
+.x-list-title-icon {
+	font-size: 1.7rem;
+	margin-right: 5px;
+}
+
+.x-table-row td {
+	vertical-align: middle;
+}
+
+.x-controls-td {
+	width: 100px;
+	text-align: right;
+}
+
+.x-cash-td {
+	width: 120px;
+	text-align: right;
+}
+
+.x-pagination-dark .page-item.active .page-link {
+	background-color: #2f353a;
+	border-color: #2f353a;
+}
+
+.x-search-query input {
+	border-bottom-right-radius: 0;
+	border-bottom: none;
+}
+
+.x-search-query .input-group-text {
+	border-bottom-left-radius: 0;
+	border-bottom: none;
+}
+
+.x-search-results select {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.x-hidden-results {
+	height: 0;
+	overflow: hidden;
+}
+
+.x-monospace {
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+.x-round-right-border {
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}
+
+.x-transactions-table {
+	border-collapse: collapse;
+	empty-cells: show;
+}
+
+.x-transactions-table td {
+	position: relative;
+}
+
+.x-transactions-table tr.x-has-rollback td:not(:last-child):before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-bottom: 1px solid red;
+  width: 100%;
+}
+
+.x-transactions-table tr.x-has-rollback td:not(:last-child):after {
+  content: "\00B7";
+  font-size: 1px;
+}
+
+.x-transactions-table tr.x-is-rollback {
+	background-color: rgb(255, 219, 219);
+}
+
+input.x-validated-input.x-not-validated {
+	padding-right: calc(1.5em + 0.75rem);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='-2 -2 7 7'%3e%3cpath stroke='grey' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+	background-repeat: no-repeat;
+	background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+	background-position: center right calc(0.375em + 0.1875rem);
+}
+
+.x-validated-input.x-valid ~ .valid-feedback {
+	display: block;
+}
+
+.x-validated-input.x-invalid ~ .invalid-feedback {
+	display: block;
+}
+
+.x-business-options-td:hover {
+	background-color: rgb(252, 204, 149);
+}
+
+.x-service-options-td:hover {
+	background-color: #aaaeaf;
+}
+
+.x-new-badge {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 1000;
+}
+
+.x-td-ellipsis {
+	position: relative;
+}
+.x-td-ellipsis:before {
+	content: '&nbsp;';
+	visibility: hidden;
+}
+.x-td-ellipsis span {
+	position: absolute;
+	left: 0;
+	right: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// overrides
+body {
+	-ms-overflow-style: none;  /* IE 10+ */
+	scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+}
+
+.dropdown-item {
+	cursor: pointer;
+}
+
+.fa-spin {
+	animation-duration: 0.5s;
+}
+
+.input-group-text {
+	min-width: 32px;
+	justify-content: center;
+}
+
+.form-check.x-slider {
+	padding-left: 0 !important;
+}
+
+select.form-control.is-valid {
+	background-position: right calc(1em + 0.1875rem) center;
+}
+
+.modal {
+	-ms-overflow-style: none;  /* IE 10+ */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.modal::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+	text-align: right;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

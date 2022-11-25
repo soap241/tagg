@@ -1,0 +1,130 @@
+<div class="row mt-3">
+    <div class="col-md-12">
+      <div class="card">
+        <!-- <div class="card-header" >
+          <h3>Create Customer</h3>
+        </div> -->
+        <div class="card-header align-items-center justify-content-between d-flex">
+         <div> <i class="fa fa-users x-list-title-icon"></i> Edit Customer </div>
+         
+          <!-- <button class="btn btn-primary mr-3"  (click)="goBack()">Back</button>   -->
+  
+        </div>
+        <div class="card-body">
+          <form [formGroup]="createCustomerForm" (ngSubmit)="submitEdit()">
+            <div class="row mb-3">
+               <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Select Subsidiary </label>
+                  <!-- <select class="form-select form-control" id="inputGroupSelect01" name="focus_customer_customer" formControlName="subsidiary">
+                    <option selected>ASL</option>
+                    <option selected>PPA</option>
+                    <option selected>ESL</option>
+                  </select> -->
+                </div>
+               </div>
+               <!-- <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Select Customer Detail</label>
+                  <select class="form-select form-control" id="inputGroupSelect01" name="focus_customer_customer" formControlName="customer_details">
+                    <option selected>Choose...</option>
+                    <option *ngFor="let c of customers" value="{{c.id}}">{{c.company_details}}</option>
+                  </select>
+                </div>
+               </div> -->
+            </div>
+             <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" autocomplete="off" class="form-control" formControlName="company_name" placeholder="Company Name">
+                  </div>
+                  <div class="text-danger mx-auto mb-4" *ngIf="company_name.invalid && (company_name.dirty || company_name.touched)">
+                    <i *ngIf="company_name.errors?.required">Customer's company name is required</i>
+                  </div>
+              </div>
+              
+                <div class="col-md-6">
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                    </div>
+                    <input type="text" autocomplete="off" class="form-control" formControlName="netsuite_customer_id" placeholder="Netsuite ID">
+                  </div>
+                  <div class="text-danger mx-auto mb-4" *ngIf="netsuite_customer_id.invalid && (netsuite_customer_id.dirty || netsuite_customer_id.touched)">
+                    <i *ngIf="netsuite_customer_id.errors?.required">Customer's netsuite id is required</i>
+                  </div>
+                </div>
+             </div>
+  
+             <div class="row">
+              <div class="col-md-6">
+                
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                  </div>
+                  <input type="text" class="form-control" formControlName="email_address" placeholder="Email Address">
+                </div>
+                <div class="text-danger mx-auto mb-4" *ngIf="email_address.invalid && (email_address.dirty || email_address.touched)">
+                  <i *ngIf="email_address.errors?.required">Customer's company email is required</i>
+                  <i *ngIf="email_address.errors?.email">Customer's company email is badly formatted</i>
+                </div>
+              </div>
+  
+                <div class="col-md-6">
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-chrome"></i></span>
+                    </div>
+                    <input type="text" autocomplete="off" class="form-control" formControlName="web_address" placeholder="Web Address">
+                  </div>
+                </div>
+             </div>
+  
+             <div class="row">
+              <div class="col-md-6"> 
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                  </div>
+                  <input type="text" autocomplete="off" class="form-control" formControlName="phone" placeholder="Phone">
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                </div>
+                <input type="text" autocomplete="off" class="form-control" formControlName="alt_phone" placeholder="Alt Phone" d>
+              </div>
+              </div>
+            </div>
+                <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-fax"></i></span>
+                </div>
+                <input type="text" autocomplete="off" class="form-control" formControlName="fax_number" placeholder="Fax Number" >
+              </div>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+                </div>
+                <textarea autocomplete="off" class="form-control" formControlName="address"  cols="30" rows="5" placeholder="Type company address here ...."></textarea>
+                <!-- <input type="text" autocomplete="off" class="form-control"  placeholder="Address" formControlName="address"> -->
+              </div>
+            <div class="formGroup">
+              <button type="button" class="btn btn-secondary" (click)="editCustomerModal.hide()">Cancel</button>
+              <button type="submit" class="btn btn-primary"
+                [disabled]="!editCustomerForm.valid">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
