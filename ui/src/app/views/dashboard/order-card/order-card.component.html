@@ -42,11 +42,19 @@
       </div>
       <div class="step" [ngClass]="order.orderStatus === 40 ? 'current' : ''">
         <span style="width: 5rem; white-space: break-spaces"
+<<<<<<< HEAD
           >Final checks</span
         >
       </div>
       <div class="step" [ngClass]="order.orderStatus === 60 ? 'current' : ''">
         <span style="width: 5rem; white-space: break-spaces">Scheduled for delivery</span>
+=======
+          >Preparation of order</span
+        >
+      </div>
+      <div class="step" [ngClass]="order.orderStatus === 60 ? 'current' : ''">
+        <span style="width: 5rem; white-space: break-spaces">Final checks</span>
+>>>>>>> 1dca21bb9d6e1598652451a12b7cb4a4d9a27050
       </div>
       <div class="step" [ngClass]="order.orderStatus === 80 ? 'current' : ''">
         <span style="width: 5rem; white-space: break-spaces">Delivered</span>

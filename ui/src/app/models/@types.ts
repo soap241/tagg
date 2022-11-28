@@ -21,6 +21,7 @@ export interface IOrder {
   totalAmount: number;
   orderStatus: number;
 }
+<<<<<<< HEAD
 
 export interface NetsuiteProject {
   id: number;
@@ -38,3 +39,5 @@ export interface NetsuiteProject {
   status?: string;
   progress_percentage: string;
 }
+=======
+>>>>>>> 1dca21bb9d6e1598652451a12b7cb4a4d9a27050

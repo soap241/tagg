@@ -9,7 +9,6 @@ import { DataService } from "../../../../services/data/data.service";
 export class CompletedProjects implements OnInit {
   projects: IProject[] = [];
 
-
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
